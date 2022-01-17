@@ -2,6 +2,8 @@ require 'simulation/grid'
 require 'simulation/position'
 require 'simulation/direction'
 
+require "forwardable"
+
 module Simulation
   class InvalidPositionError < StandardError; end
 
