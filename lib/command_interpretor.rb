@@ -25,8 +25,8 @@ class CommandInterpretor
 
   def convert_to_command(command_str)
     case command_str
-    when /^PLACE \d+\,\d+\,(NORTH|SOUTH|EAST|WEST)$/
-      match_data = command_str.match(/^PLACE (?<x>\d+)\,(?<y>\d+)\,(?<dir>NORTH|SOUTH|EAST|WEST)$/)
+    when /^PLACE \d+\,\d+\,(NORTH|SOUTH|EAST|WEST|NORTHEAST|SOUTHEAST|NORTHWEST|SOUTHWEST)$/
+      match_data = command_str.match(/^PLACE (?<x>\d+)\,(?<y>\d+)\,(?<dir>NORTH|SOUTH|EAST|WEST|NORTHEAST|SOUTHEAST|NORTHWEST|SOUTHWEST)$/)
       Simulation::Command::Place.new(
         command_executor,
         match_data["x"].to_i,
