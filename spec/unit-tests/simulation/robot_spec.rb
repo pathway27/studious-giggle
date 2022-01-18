@@ -251,6 +251,56 @@ describe Simulation::Robot do
       context "and it is facing NORTH" do
         let(:facing_direction) { Simulation::Direction::NORTH }
 
+        it "on turning right changes its direction to NORTHEAST" do
+          subject.turn_right
+
+          expect(subject.facing_direction).to eq(Simulation::Direction::NORTHEAST)
+        end
+      end
+
+      context "and it is facing EAST" do
+        let(:facing_direction) { Simulation::Direction::EAST }
+
+        it "on turning right changes its direction to SOUTHEAST" do
+          subject.turn_right
+
+          expect(subject.facing_direction).to eq(Simulation::Direction::SOUTHEAST)
+        end
+      end
+
+      context "and it is facing SOUTH" do
+        let(:facing_direction) { Simulation::Direction::SOUTH }
+
+        it "on turning right changes its direction to SOUTHWEST" do
+          subject.turn_right
+
+          expect(subject.facing_direction).to eq(Simulation::Direction::SOUTHWEST)
+        end
+      end
+
+      context "and it is facing WEST" do
+        let(:facing_direction) { Simulation::Direction::WEST }
+
+        it "on turning right changes its direction to NORTHWEST" do
+          subject.turn_right
+
+          expect(subject.facing_direction).to eq(Simulation::Direction::NORTHWEST)
+        end
+      end
+
+      context "and it is facing NORTHWEST" do
+        let(:facing_direction) { Simulation::Direction::NORTHWEST }
+
+        it "on turning right changes its direction to NORTH" do
+          subject.turn_right
+
+          expect(subject.facing_direction).to eq(Simulation::Direction::NORTH)
+        end
+      end
+
+      context "and it is facing NORTHEAST" do
+        let(:facing_direction) { Simulation::Direction::NORTHEAST }
+
         it "on turning right changes its direction to EAST" do
           subject.turn_right
 
@@ -258,18 +308,8 @@ describe Simulation::Robot do
         end
       end
 
-      context "and it is facing EAST" do
-        let(:facing_direction) { Simulation::Direction::EAST }
-
-        it "on turning right changes its direction to SOUTH" do
-          subject.turn_right
-
-          expect(subject.facing_direction).to eq(Simulation::Direction::SOUTH)
-        end
-      end
-
-      context "and it is facing SOUTH" do
-        let(:facing_direction) { Simulation::Direction::SOUTH }
+      context "and it is facing SOUTHWEST" do
+        let(:facing_direction) { Simulation::Direction::SOUTHWEST }
 
         it "on turning right changes its direction to WEST" do
           subject.turn_right
@@ -278,13 +318,13 @@ describe Simulation::Robot do
         end
       end
 
-      context "and it is facing WEST" do
-        let(:facing_direction) { Simulation::Direction::WEST }
+      context "and it is facing SOUTHEAST" do
+        let(:facing_direction) { Simulation::Direction::SOUTHEAST }
 
-        it "on turning right changes its direction to NORTH" do
+        it "on turning right changes its direction to SOUTH" do
           subject.turn_right
 
-          expect(subject.facing_direction).to eq(Simulation::Direction::NORTH)
+          expect(subject.facing_direction).to eq(Simulation::Direction::SOUTH)
         end
       end
     end
@@ -315,6 +355,46 @@ describe Simulation::Robot do
       context "and it is facing NORTH" do
         let(:facing_direction) { Simulation::Direction::NORTH }
 
+        it "on turning right changes its direction to NORTHWEST" do
+          subject.turn_left
+
+          expect(subject.facing_direction).to eq(Simulation::Direction::NORTHWEST)
+        end
+      end
+
+      context "and it is facing EAST" do
+        let(:facing_direction) { Simulation::Direction::EAST }
+
+        it "on turning right changes its direction to NORTHEAST" do
+          subject.turn_left
+
+          expect(subject.facing_direction).to eq(Simulation::Direction::NORTHEAST)
+        end
+      end
+
+      context "and it is facing SOUTH" do
+        let(:facing_direction) { Simulation::Direction::SOUTH }
+
+        it "on turning right changes its direction to SOUTHEAST" do
+          subject.turn_left
+
+          expect(subject.facing_direction).to eq(Simulation::Direction::SOUTHEAST)
+        end
+      end
+
+      context "and it is facing WEST" do
+        let(:facing_direction) { Simulation::Direction::WEST }
+
+        it "on turning right changes its direction to SOUTHWEST" do
+          subject.turn_left
+
+          expect(subject.facing_direction).to eq(Simulation::Direction::SOUTHWEST)
+        end
+      end
+
+      context "and it is facing NORTHWEST" do
+        let(:facing_direction) { Simulation::Direction::NORTHWEST }
+
         it "on turning right changes its direction to WEST" do
           subject.turn_left
 
@@ -322,8 +402,8 @@ describe Simulation::Robot do
         end
       end
 
-      context "and it is facing EAST" do
-        let(:facing_direction) { Simulation::Direction::EAST }
+      context "and it is facing NORTHEAST" do
+        let(:facing_direction) { Simulation::Direction::NORTHEAST }
 
         it "on turning right changes its direction to NORTH" do
           subject.turn_left
@@ -332,8 +412,8 @@ describe Simulation::Robot do
         end
       end
 
-      context "and it is facing SOUTH" do
-        let(:facing_direction) { Simulation::Direction::SOUTH }
+      context "and it is facing SOUTHEAST" do
+        let(:facing_direction) { Simulation::Direction::SOUTHEAST }
 
         it "on turning right changes its direction to EAST" do
           subject.turn_left
@@ -342,8 +422,8 @@ describe Simulation::Robot do
         end
       end
 
-      context "and it is facing WEST" do
-        let(:facing_direction) { Simulation::Direction::WEST }
+      context "and it is facing SOUTHWEST" do
+        let(:facing_direction) { Simulation::Direction::SOUTHWEST }
 
         it "on turning right changes its direction to SOUTH" do
           subject.turn_left

@@ -1,5 +1,4 @@
-Robot Simulation
-=====  
+# Robot Simulation
 
 1. Ensure that following dependencies are met
    - ruby version is  *ruby-2.6.3*
@@ -9,7 +8,7 @@ Robot Simulation
 2. To run specs 'bundle exec rspec'
 
 3. To run the robot simulation, just type  
-   `./scripts/robot_simulator`
+   `./scripts/robot_simulator scripts/command.txt`
 
    - all the commands are place in the `command.txt` file in scripts folder
     * commands are read from this file & fed into the simulated robot.  
@@ -17,3 +16,7 @@ Robot Simulation
     * few invalid commands (just to check error handling)
 
 4. All error, exception (when robot can fall due to a command), debug information is logged into the log file `log/robot_[environment]. log`.
+
+## Changelog
+
+1. Upgrade to ruby 2.6.3

@@ -19,16 +19,16 @@ LEFT
 RIGHT
 REPORT
 PLACE still puts the toy robot on the table in position X,Y. However, in addition to cardinal directions NORTH, SOUTH, EAST or WEST, this upgraded model can also face (F) inter-cardinal directions e.g. NORTHEAST or SOUTHWEST.
-	•	The origin (0,0) can still be considered to be the south west most corner. 
-	•	The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command 
-	•	The application should discard all commands in the sequence until a valid PLACE command has been executed. 
-	•	MOVE will move the toy robot one unit forward in the direction it is currently facing. This direction may be diagonal. 
-	•	LEFT and RIGHT will now rotate the robot 45 degrees in the specified direction and still will not change the position of the robot. 
-	•	REPORT will announce the X,Y and F of the robot, as before. 
-	•	This can be in any form, but standard output is sufficient. 
-	•	A robot that is not on the table can still choose the ignore the MOVE, LEFT, RIGHT and REPORT commands. 
-	•	As before, input can be from a file, or from standard input, as the developer chooses. 
-	•	Provide test data to exercise the application. 
+	•	The origin (0,0) can still be considered to be the south west most corner.
+	•	The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command
+	•	The application should discard all commands in the sequence until a valid PLACE command has been executed.
+	•	MOVE will move the toy robot one unit forward in the direction it is currently facing. This direction may be diagonal.
+	•	LEFT and RIGHT will now rotate the robot 45 degrees in the specified direction and still will not change the position of the robot.
+	•	REPORT will announce the X,Y and F of the robot, as before.
+	•	This can be in any form, but standard output is sufficient.
+	•	A robot that is not on the table can still choose the ignore the MOVE, LEFT, RIGHT and REPORT commands.
+	•	As before, input can be from a file, or from standard input, as the developer chooses.
+	•	Provide test data to exercise the application.
 Constraints:
 The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot. Any move that would cause the robot to fall must be ignored.
 

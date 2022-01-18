@@ -97,7 +97,8 @@ module Simulation
     end
 
     def facing_direction_valid?(facing_direction)
-      facing_direction[/^(#{Direction::NORTH}|#{Direction::EAST}|#{Direction::WEST}|#{Direction::SOUTH})$/]
+      valid_directions = Simulation::Direction.constants.map {|c| Simulation::Direction.const_get c }
+      valid_directions.include? facing_direction
     end
 
     def next_move_valid?
