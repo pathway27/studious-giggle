@@ -44,6 +44,14 @@ module Simulation
           @position = Simulation::Position.new(x_coordinate - 1, y_coordinate, facing_direction)
         when Simulation::Direction::EAST
           @position = Simulation::Position.new(x_coordinate + 1, y_coordinate, facing_direction)
+        when Simulation::Direction::NORTHEAST
+          @position = Simulation::Position.new(x_coordinate + 1, y_coordinate + 1, facing_direction)
+        when Simulation::Direction::NORTHWEST
+          @position = Simulation::Position.new(x_coordinate - 1, y_coordinate + 1, facing_direction)
+        when Simulation::Direction::SOUTHEAST
+          @position = Simulation::Position.new(x_coordinate + 1, y_coordinate - 1, facing_direction)
+        when Simulation::Direction::SOUTHWEST
+          @position = Simulation::Position.new(x_coordinate - 1, y_coordinate - 1, facing_direction)
         else
           raise InvalidStateError, "Robot in invalid direction"
         end
@@ -110,6 +118,18 @@ module Simulation
       when Simulation::Direction::SOUTH
         y_coordinate - 1 >= @grid.maximum_south_bound
       when Simulation::Direction::WEST
+        x_coordinate - 1 >= @grid.maximum_west_bound
+      when Simulation::Direction::NORTHEAST
+        y_coordinate + 1 <= @grid.maximum_north_bound &&
+        x_coordinate + 1 <= @grid.maximum_east_bound
+      when Simulation::Direction::SOUTHEAST
+        y_coordinate - 1 >= @grid.maximum_south_bound &&
+        x_coordinate + 1 <= @grid.maximum_east_bound
+      when Simulation::Direction::NORTHWEST
+        y_coordinate + 1 <= @grid.maximum_north_bound &&
+        x_coordinate - 1 >= @grid.maximum_west_bound
+      when Simulation::Direction::SOUTHWEST
+        y_coordinate - 1 >= @grid.maximum_south_bound &&
         x_coordinate - 1 >= @grid.maximum_west_bound
       else
         false

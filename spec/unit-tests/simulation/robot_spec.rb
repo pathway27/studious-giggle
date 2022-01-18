@@ -175,6 +175,82 @@ describe Simulation::Robot do
         end
       end
 
+      context "and can move in the NORTHEAST direction" do
+        let(:x_coordinate) { 2 }
+        let(:y_coordinate) { 4 }
+        let(:facing_direction) { Simulation::Direction::NORTHEAST }
+
+        it "moves in that direction" do
+          subject.move
+
+          expect(subject.x_coordinate).to eq(x_coordinate + 1)
+          expect(subject.y_coordinate).to eq(y_coordinate + 1)
+        end
+
+        it "does not change its direction" do
+          subject.move
+
+          expect(subject.facing_direction).to eq(facing_direction)
+        end
+      end
+
+      context "and can move in the SOUTHEAST direction" do
+        let(:x_coordinate) { 2 }
+        let(:y_coordinate) { 4 }
+        let(:facing_direction) { Simulation::Direction::SOUTHEAST }
+
+        it "moves in that direction" do
+          subject.move
+
+          expect(subject.x_coordinate).to eq(x_coordinate + 1)
+          expect(subject.y_coordinate).to eq(y_coordinate - 1)
+        end
+
+        it "does not change its direction" do
+          subject.move
+
+          expect(subject.facing_direction).to eq(facing_direction)
+        end
+      end
+
+      context "and can move in the NORTHWEST direction" do
+        let(:x_coordinate) { 2 }
+        let(:y_coordinate) { 4 }
+        let(:facing_direction) { Simulation::Direction::NORTHWEST }
+
+        it "moves in that direction" do
+          subject.move
+
+          expect(subject.x_coordinate).to eq(x_coordinate - 1)
+          expect(subject.y_coordinate).to eq(y_coordinate + 1)
+        end
+
+        it "does not change its direction" do
+          subject.move
+
+          expect(subject.facing_direction).to eq(facing_direction)
+        end
+      end
+
+      context "and can move in the SOUTHWEST direction" do
+        let(:x_coordinate) { 2 }
+        let(:y_coordinate) { 4 }
+        let(:facing_direction) { Simulation::Direction::SOUTHWEST }
+
+        it "moves in that direction" do
+          subject.move
+
+          expect(subject.x_coordinate).to eq(x_coordinate - 1)
+          expect(subject.y_coordinate).to eq(y_coordinate - 1)
+        end
+
+        it "does not change its direction" do
+          subject.move
+
+          expect(subject.facing_direction).to eq(facing_direction)
+        end
+      end
+
       shared_examples "cannot_move_with_current_direction" do
         it "does not move in that direction" do
           subject.move
@@ -218,6 +294,38 @@ describe Simulation::Robot do
         let(:x_coordinate) { 0 }
         let(:y_coordinate) { 4 }
         let(:facing_direction) { Simulation::Direction::WEST }
+
+        it_behaves_like "cannot_move_with_current_direction"
+      end
+
+      context "cannot move in the NORTHWEST direction" do
+        let(:x_coordinate) { 2 }
+        let(:y_coordinate) { 5 }
+        let(:facing_direction) { Simulation::Direction::NORTHWEST }
+
+        it_behaves_like "cannot_move_with_current_direction"
+      end
+
+      context "cannot move in the NORTHEAST direction" do
+        let(:x_coordinate) { 5 }
+        let(:y_coordinate) { 3 }
+        let(:facing_direction) { Simulation::Direction::NORTHEAST }
+
+        it_behaves_like "cannot_move_with_current_direction"
+      end
+
+      context "cannot move in the SOUTHWEST direction" do
+        let(:x_coordinate) { 5 }
+        let(:y_coordinate) { 0 }
+        let(:facing_direction) { Simulation::Direction::SOUTHWEST }
+
+        it_behaves_like "cannot_move_with_current_direction"
+      end
+
+      context "cannot move in the SOUTHEAST direction" do
+        let(:x_coordinate) { 0 }
+        let(:y_coordinate) { 0 }
+        let(:facing_direction) { Simulation::Direction::SOUTHEAST }
 
         it_behaves_like "cannot_move_with_current_direction"
       end
