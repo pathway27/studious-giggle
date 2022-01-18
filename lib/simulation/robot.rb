@@ -105,8 +105,11 @@ module Simulation
     end
 
     def facing_direction_valid?(facing_direction)
-      valid_directions = Simulation::Direction.constants.map {|c| Simulation::Direction.const_get c }
       valid_directions.include? facing_direction
+    end
+
+    def valid_directions
+      @valid_directions ||= Simulation::Direction.constants.map {|c| Simulation::Direction.const_get c }
     end
 
     def next_move_valid?

@@ -80,13 +80,13 @@ Original Toy Robot Source code
 
 ## What we are looking for
 
-1. Does it work?
-2. Have you improved the code?
-3. What tradeoffs did you make?
+1. Does it work? Yes.
+2. Have you improved the code? Upgraded to ruby 2.6, some refactors, mostly new feature
+3. What tradeoffs did you make? Adding more directions as the cost of more verbose code.
 4. How well designed is the resulting code?
 5. What tests were added / changed?
 6. In what order did you make your changes?
-7. Will this Robot be capable of saving human kind?
+7. Will this Robot be capable of saving human kind? Probably not yet. :)
 
 ## Deliverables
 
